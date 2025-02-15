@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Inserindo arquivo compilado do Tailwind CSS -->
+    <link href="dist/output.css" rel="stylesheet">
+    <style>
+        html {
+            
+            padding: 0;
+            margin: 0;
+            background-color: #eee !important;
+        }
+      .nav-arrow {
+        font-size: 6rem;
+        color: #b0b6bd;
+        font-weight: 100;
+        /* text-shadow: 2px 2px 4px rgba(0,0,0,0.2); */
+      }
+      .carousel-slide {
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(100%);
+      }
+      .carousel-slide.active {
+        transform: translateX(0);
+      }
+      .carousel-slide.previous {
+        transform: translateX(-100%);
+      }
+      @media (max-width: 768px) {
+        .carousel-slide {
+          position: relative;
+          text-align: center;
+          padding: 0;
+          flex-direction: column;
+          margin-top: 80px; /* Espaço para que os slides fiquem abaixo do logo */
+        }
+        .carousel-slide > div.w-1/2 {
+          display: none; /* Esconde a div da imagem em telas menores */
+        }
+        .carousel-slide > .carousel-text {
+          position: relative;
+          top: 0;
+          left: 0;
+          color: #333;
+          padding: 2rem 1rem;
+          width: 100%;
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          margin-top: 4rem; /* Espaço abaixo do logo */
+        }
+        .main-container {
+          height: auto;
+          overflow-y: auto;
+        }
+        .text {
+          color: #444 !important; /* Preto um pouco mais claro */
+        }
+        .fixed {
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .nav-arrow {
+          font-size: 3rem;
+          z-index: 20;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 0 20px; 
+        }
+        .left-8 {
+          left: 10px;
+        }
+        .right-8 {
+          right: 10px;
+        }
+        .carousel-slide .text {
+          color: #eee;
+          font-size: 16px;
+        }
+        .carousel-slide h2{
+            font-size: 26px;
+            color: darkblue;
+        }
+        .carousel-slide img {
+          width: 90%; /* Imagem maior em telas menores */
+          margin: 20px 0 -120px 0; /* Espaço ajustado para aproximar a imagem dos textos */
+        }
+        .logo-container {
+          position: relative;
+        }
+        .logo-container .logo-inner {
+          position: relative !important;
+          top: 0 !important;
+          margin: 0 auto !important;
+          text-align: center;
+          padding-top: 20px;
+        }
+      }
+    </style>
+</head>
+<body class="text-gray-900">
+    <div class="logo-container fixed top-0 w-full flex justify-center z-50">
+      <div class="w-full max-w-[1920px] relative">
+        <div class="logo-inner absolute top-6 left-32">
+          <a target="_blank" href="https://www.datafull.com.br/">
+            <img src="src/img/logo.png" alt="Logo Datafull" class="h-12">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-screen h-screen overflow-hidden flex justify-center main-container">
+      <div class="relative w-full max-w-[1920px]">
+        <!-- Slide 1 -->
+        <div id="slide1" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">ATHUS</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">A Revolução da Gestão Pública no Brasil</h2>
+            <p class="text-gray-600 text-lg text">O ATHUS é um sistema de gestão inovador, desenvolvido por servidores públicos para revolucionar a tramitação de documentos e processos na administração. Ele permite a 
+                digitalização total das operações, integra portais de transparência, sistemas de contabilidade e RH, e utiliza inteligência artificial para 
+                elaborar documentos complexos em segundos.</p>
+            <a href="https://www44.plataformaathus.com.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+            <img src="src/img/slides/athus_catalogo.jpg" alt="Laptop com interface" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div id="slide2" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32 hidden" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">SIGLE</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">Sistema Inteligente Legislativo</h2>
+            <p class="text-gray-600 text-lg text">Dê um salto de eficiência no Legislativo com o SIGLE. Essa solução utiliza Inteligência Artificial para criar projetos de lei, resoluções e decretos em segundos com nossa inteligência artificial, reduzindo o tempo gasto em processos manuais. O SIGLE também automatiza atas de sessões e reuniões, além de oferecer votação eletrônica com exibição em monitores, TVs ou painéis de LED, promovendo transparência e profissionalismo. Baseado em experiências de instituições renomadas, como Assembleias Legislativas e Câmaras de Vereadores de grandes capitais.</p>
+            <a href="https://legis.plataformaathus.com.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+            <img src="src/img/slides/sigle_catalogo.jpg" alt="Tecnologia" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div id="slide3" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32 hidden" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">SIGLI</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">Sistema Inteligente de Licitações</h2>
+            <p class="text-gray-600 text-lg text">Com o SIGLI, a burocracia dá lugar à eficiência. Essa ferramenta automatiza todas as etapas do processo licitatório com inteligência artificial, desde o planejamento até a homologação. Gere documentos como DFD, Mapa de Riscos, ETP, Termo de Referência e Edital em segundos. O sistema também facilita pesquisas e cotações diretamente pelo celular, garantindo rapidez e segurança em todas as etapas.</p>
+            <a href="https://www36.sigli.com.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+            <img src="src/img/slides/sigli_catalogo.jpg" alt="Dashboard" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div id="slide4" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32 hidden" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">LAWER</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">Gestão Inteligente de Contratos</h2>
+            <p class="text-gray-600 text-lg text">Transforme a gestão de contratos com o LAWER, a solução definitiva para automatizar processos contratuais. Crie contratos públicos completos em segundos, alinhados às legislações vigentes com nossa inteligência artificial. Receba alertas automáticos de prazos e vencimentos via WhatsApp, e-mail e SMS, garantindo que nada seja esquecido. Além disso, todos os contratos ficam organizados e acessíveis em uma base de dados segura, otimizando consultas e auditorias.</p>
+            <a href="https://www44.plataformaathus.com.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+            <img src="src/img/slides/lawer_catalogo.jpg" alt="Conformidade" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div id="slide5" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32 hidden" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">NEXXUS</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">Gestão e Controle Interno em Tempo Real</h2>
+            <p class="text-gray-600 text-lg text">Controle interno simplificado e eficiente é o que o Nexxus oferece. Com ele, é possível acompanhar, em tempo real com inteligência artificial, todos os documentos e processos em tramitação. Relatórios detalhados, monitoramento de prazos e conformidades são entregues em uma interface amigável, permitindo aos gestores um controle estratégico sobre os atos administrativos.</p>
+            <a href="https://www44.plataformaathus.com.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+            <img src="src/img/slides/nexxus_catalogo.jpg" alt="Relatórios" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+        <!-- Slide 6 -->
+        <div id="slide4" class="carousel-slide absolute inset-0 w-full h-full flex items-center justify-between px-32 hidden" 
+             style="background-color: #eee;">
+          <div class="w-full md:w-[60%] space-y-6 carousel-text order-2 md:order-1">
+            <p class="text-orange-500 font-semibold uppercase text-lg">PORTAL DA TRANSPARÊNCIA</p>
+            <h2 class="text-4xl font-bold text-[#1e3a8a]">Portal da Transparência</h2>
+            <p class="text-gray-600 text-lg text">Desenvolvido especialmente para órgãos públicos que buscam cumprir rigorosamente as exigências legais, nossa solução integra e divulga informações de forma clara, segura e acessível. Com um design moderno e intuitivo, o portal facilita o acesso dos cidadãos aos dados governamentais, promovendo a participação social e reforçando a credibilidade da sua administração.</p>
+            <a href="https://transparencia.montenegro.ro.gov.br/" target="_blank" class="mt-6 w-12 h-12 rounded-full bg-blue-400 hover:bg-blue-500 transition-colors flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+          </div>
+          <div class="w-[40%] flex justify-center order-1 md:order-2">
+              <img src="src/img/slides/portal.jpg" alt="Conformidade" class="w-[70%] rounded-lg shadow-[5px_5px_15px_rgba(0,0,0,0.5)]">
+          </div>
+        </div>
+
+        <!-- Botões de navegação -->
+        <button onclick="prevSlide()" class="absolute left-8 top-1/2 transform -translate-y-1/2 focus:outline-none nav-arrow hover:scale-110 transition-transform">
+          ❮
+        </button>
+        <button onclick="nextSlide()" class="absolute right-8 top-1/2 transform -translate-y-1/2 focus:outline-none nav-arrow hover:scale-110 transition-transform">
+          ❯
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      let isAnimating = false;
+
+      function showSlide(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        if(index >= slides.length) {
+          slideIndex = 0;
+        } else if(index < 0) {
+          slideIndex = slides.length - 1;
+        } else {
+          slideIndex = index;
+        }
+
+        const currentSlide = document.querySelector('.carousel-slide.active');
+        const nextSlide = slides[slideIndex];
+
+        // Remove hidden class from next slide and position it
+        nextSlide.classList.remove('hidden');
+
+        // Wait a frame to ensure proper positioning
+        requestAnimationFrame(() => {
+          if (currentSlide) {
+            currentSlide.classList.add('previous');
+            currentSlide.classList.remove('active');
+          }
+          nextSlide.classList.add('active');
+
+          // After transition completes
+          setTimeout(() => {
+            slides.forEach((slide, i) => {
+              if (i !== slideIndex) {
+                slide.classList.add('hidden');
+                slide.classList.remove('active', 'previous');
+              }
+            });
+            isAnimating = false;
+          }, 500); // Mesmo tempo que a transição CSS
+        });
+      }
+
+      function nextSlide() {
+        showSlide(slideIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(slideIndex - 1);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        slides[0].classList.add('active');
+        slides[0].style.transform = 'translateX(0)';
+        showSlide(slideIndex);
+      });
+    </script>
+</body>
+</html>

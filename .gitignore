@@ -1,0 +1,41 @@
+# Dependências
+node_modules/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de IDE/editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Arquivos de build/output
+/build
+/out
+
+# Cache
+.cache/
+.npm/
+.eslintcache
+
+# Arquivos temporários
+*.tmp
+*.temp
+.temp/ 
